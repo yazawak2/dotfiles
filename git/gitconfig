@@ -1,3 +1,8 @@
+[ghq]
+  root = ~/dev
+[user]
+  name = JIRO
+  email = yazawa17ko@gmail.com
 [alias]
   br = branch
   co = checkout
@@ -15,7 +20,7 @@
   llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
   delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
