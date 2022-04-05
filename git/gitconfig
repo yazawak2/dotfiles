@@ -1,0 +1,21 @@
+[alias]
+  br = branch
+  co = checkout
+  ci = commit -v
+  cf = commit -v --fixup=HEAD
+  ca = commit -v --amend
+  cp = cherry-pick
+  df = diff
+  mg = merge
+  ri = !sh -c 'git rebase -i HEAD~$0'
+  st = status
+  ps = push
+  pl = pull
+  hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
+  llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
+  delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
