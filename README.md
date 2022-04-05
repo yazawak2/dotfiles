@@ -11,5 +11,9 @@ ls -la ~/ | grep gitconfig
 
 # create symbolic link
 rm -f ~/.gitconfig
-ln -s $(pwd)/git/.gitconfig ~/.gitconfig
+ln -s $(pwd)/git/gitconfig ~/.gitconfig
+
+# set your global user info
+git config --global user.name "Your Name"
+git config --global user.email you@example.com
 ```
